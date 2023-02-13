@@ -49,7 +49,21 @@ def load_data(control, filename):
     Carga los datos del reto
     """
     # TODO: Realizar la carga de datos
-    pass
+    #Accediendo a la estructura de datos
+    a_lista=control.get("model")
+    data_structure=a_lista.get("data")
+    #Carga de datos
+    # abriendo el archivo CSV
+    data_open = open(filename, "r", encoding="utf-8")
+    # leyendo el archivo CSV
+    data_reader= csv.DictReader(filename, delimiter=",")
+    # iterando sobre los registros del archivo CSV
+    for key in data_reader:
+        data_structure=model.add_data(data_structure,data_reader)
+    return a_lista
+    
+
+
 
 
 # Funciones de ordenamiento
