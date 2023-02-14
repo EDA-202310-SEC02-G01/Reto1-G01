@@ -59,12 +59,11 @@ def print_menu():
     print("10- Obtener dato dado un ID")
     print("0- Salir")
 
-
 def load_data(control):
     """
     Carga los datos
     """
-    data = controller.load_data(control, "Ruta")
+    data = controller.load_data(control, "Salida_agregados_renta_juridicos_AG-small")
     return data
 
 
@@ -157,6 +156,7 @@ if __name__ == "__main__":
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
                 data = load_data(control)
+                print('Numero de filas en el CSV: '+str(data))
             elif int(inputs) == 2:
                 print_req_1(control)
 
