@@ -59,12 +59,12 @@ def print_menu():
     print("10- Obtener dato dado un ID")
     print("0- Salir")
 
-
 def load_data(control):
     """
     Carga los datos
     """
-    data = controller.load_data(control, "Salida_agregados_renta_juridicos_AG-small.csv")
+    ruta="D:\OneDrive - Universidad de los Andes\Séptimo semestre\Estructuras de datos y algoritmos\Reto_1\Reto1-G01\Data\DIAN\Salida_agregados_renta_juridicos_AG-small.csv"
+    data = controller.load_data(control, ruta)
     return data
 
 
@@ -139,7 +139,6 @@ def print_req_8(control):
     # TODO: Imprimir el resultado del requerimiento 8
     print(controller.req_8(control))
 
-
 # Se crea el controlador asociado a la vista
 control = new_controller()
 
@@ -157,6 +156,7 @@ if __name__ == "__main__":
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
                 data = load_data(control)
+                print(data["data"])
             elif int(inputs) == 2:
                 print_req_1(control)
 
