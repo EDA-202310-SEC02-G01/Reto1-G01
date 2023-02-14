@@ -49,7 +49,18 @@ def load_data(control, filename):
     Carga los datos del reto
     """
     # TODO: Realizar la carga de datos
-    pass
+    data_struc=control["model"]
+    op_file=open(filename,"r",encoding="utf8")
+    reader=csv.DictReader(op_file,delimiter=",")
+    
+    for li in reader:
+        data_struc=model.add_data(data_struc,li)
+    op_file.close()
+
+    return data_struc
+
+
+
 
 
 # Funciones de ordenamiento

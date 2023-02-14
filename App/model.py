@@ -65,8 +65,9 @@ def add_data(data_structs, data):
     """
     Función para agregar nuevos elementos a la lista
     """
-    d = new_data(data["id"], data["info"])
-    lt.addLast(data_structs["data"], d)
+    
+    
+    lt.addLast(data_structs["data"], data)
 
     return data_structs
 
