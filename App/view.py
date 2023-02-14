@@ -138,7 +138,6 @@ def print_req_8(control):
     # TODO: Imprimir el resultado del requerimiento 8
     print(controller.req_8(control))
 
-
 # Se crea el controlador asociado a la vista
 control = new_controller()
 
@@ -156,7 +155,7 @@ if __name__ == "__main__":
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
                 data = load_data(control)
-                print('Numero de filas en el CSV: '+str(data))
+                print(load_data("Salida_agregados_renta_juridicos_AG-small"))
             elif int(inputs) == 2:
                 print_req_1(control)
 
