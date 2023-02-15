@@ -156,14 +156,20 @@ if __name__ == "__main__":
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
                 data = load_data(control)
-                print("La cantidad de datos cargados son " + str(lt.size(data["data"])))
+                print("La cantidad de datos cargados son " + str(lt.size(data["data"]))+ ("\n"))
+                
                 print(data["data"]["elements"][0])
+                print("\n" + "////////////////////////////////////////////////////////////////////////////" + "\n")
                 print(data["data"]["elements"][1])
-                print(data["data"]["elements"][2])
-                print("...")
+                print("\n" + "////////////////////////////////////////////////////////////////////////////" + "\n")
+                print(data["data"]["elements"][2]) 
+                print("\n" + "////////////////////////////////////////////////////////////////////////////" + "\n")               
                 print(data["data"]["elements"][-3])
+                print("\n" + "////////////////////////////////////////////////////////////////////////////" + "\n")
                 print(data["data"]["elements"][-2])
+                print("\n" + "////////////////////////////////////////////////////////////////////////////" + "\n")
                 print(data["data"]["elements"][-1])
+                
             elif int(inputs) == 2:
                 print_req_1(control)
 
