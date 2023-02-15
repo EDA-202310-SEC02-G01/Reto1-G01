@@ -63,7 +63,7 @@ def load_data(control):
     """
     Carga los datos
     """
-    ruta="D:\OneDrive - Universidad de los Andes\Séptimo semestre\Estructuras de datos y algoritmos\Reto_1\Reto1-G01\Data\DIAN\Salida_agregados_renta_juridicos_AG-small.csv"
+    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
     data = controller.load_data(control, ruta)
     return data
 
