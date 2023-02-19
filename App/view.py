@@ -57,6 +57,7 @@ def print_menu():
     print("8- Ejecutar Requerimiento 7")
     print("9- Ejecutar Requerimiento 8")
     print("10- Obtener dato dado un ID")
+    print("11- Ordenar información")
     print("0- Salir")
 
 def load_data(control):
@@ -197,6 +198,16 @@ if __name__ == "__main__":
             elif int(inputs) == 10:
                 id = input("Ingrese un id: ")
                 print_data(control, id)
+            
+            elif int(inputs) == 11
+                size = input("Indique tamaño de la muestra: ")
+                print("Seleccione el tipo de ordenamiento")
+                sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n4.QuickSort\n5.MergeSort\n")
+                result = controller.sort(control, int(size), int(sortType))
+                delta_time = f"{result[1]:.3f}"
+                sorted_list = result[0]
+                print("Para", size, "elementos, delta tiempo:", str(delta_time))
+                printSortResults(sorted_list) 
 
             elif int(inputs) == 0:
                 working = False
