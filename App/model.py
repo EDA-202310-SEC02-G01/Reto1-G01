@@ -211,7 +211,7 @@ def cmp_impuestos_by_anio_CAE(impuesto1, impuesto2):
     if (float(impuesto1['Año']) < float(impuesto2['Año'])):
         return True
     elif(float(impuesto1['Año']) == float(impuesto2['Año'])):
-        if ((impuesto1['Código actividad económica']) < (movie2['Código actividad económica'])):
+        if ((impuesto1['Código actividad económica']) < (impuesto2['Código actividad económica'])):
             return True
     else:
         return False
@@ -226,9 +226,9 @@ def sort(data_structs, size, sortType):
         sa.sort(sub_list, cmp_impuestos_by_anio_CAE)
     elif(sortType == 2):
         print("Ordenando con Insertion Sort")
-        sin.sort(sub_list, cmp_impuestos_by_anio_CAE)
+        ins.sort(sub_list, cmp_impuestos_by_anio_CAE)
     elif(sortType == 3):
         print("Ordenando con Selection Sort")
-        ssel.sort(sub_list, cmp_impuestos_by_anio_CAE)
+        se.sort(sub_list, cmp_impuestos_by_anio_CAE)
 
     #sa.sort(data_structs["data"], sort_criteria)
