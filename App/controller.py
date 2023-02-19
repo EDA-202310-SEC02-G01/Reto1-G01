@@ -49,31 +49,21 @@ def load_data(control, filename):
     Carga los datos del reto
     """
     # TODO: Realizar la carga de datos
-    data_struc=control["model"]
-    op_file=open(filename,"r",encoding="utf8")
-    reader=csv.DictReader(op_file,delimiter=",")
-    
-    for li in reader:
-        data_struc=model.add_data(data_struc,li)
-    op_file.close()
-
-    return data_struc
-
-
-
-
+    data = load_data(data_structs, filename)
+    sort(data_structs)
+    return data
 
 # Funciones de ordenamiento
 
-def sort(control):
+def sort(control, size, sortType):
     """
     Ordena los datos del modelo
     """
     start_time = get_time()
-    model.sort(control["model"])
+    model.sort(control["model"], size, sortType)
     end_time = get_time()
-    delta_t = delta_time(start_time, end_time)
-    return delta_t
+    delta_time = delta_time(start_time, end_time)
+    return delta_time
 
 
 # Funciones de consulta sobre el catálogo

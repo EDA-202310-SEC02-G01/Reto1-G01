@@ -197,9 +197,38 @@ def sort_criteria(data_1, data_2):
     """
     return data_1["id"] > data_2["id"]
 
+def cmp_impuestos_by_anio_CAE(impuesto1, impuesto2):
+    """
+    Devuelve verdadero (True) si el año de impuesto1 es menor que el de impuesto2,
+    en caso de que sean iguales tenga en cuenta el código de la actividad económica,
+    de lo contrario devuelva falso (False).
+    Args:
+    impuesto1: información del primer registro de impuestos que incluye el “Año” y el
+    “Código actividad económica”
+    impuesto2: información del segundo registro de impuestos que incluye el “Año” y el
+    “Código actividad económica”
+    """
+    if (float(impuesto1['Año']) < float(impuesto2['Año'])):
+        return True
+    elif(float(impuesto1['Año']) == float(impuesto2['Año'])):
+        if ((impuesto1['Código actividad económica']) < (movie2['Código actividad económica'])):
+            return True
+    else:
+        return False
 
-def sort(data_structs):
+def sort(data_structs, size, sortType):
     """
     Función encargada de ordenar la lista con los datos
     """
-    sa.sort(data_structs["data"], sort_criteria)
+    sub_list = lt.subList(data_structs["data"], 1, size)
+    if (sortType == 1):
+        print("Ordenando con Shell Sort")
+        sa.sort(sub_list, cmp_impuestos_by_anio_CAE)
+    elif(sortType == 2):
+        print("Ordenando con Insertion Sort")
+        sin.sort(sub_list, cmp_impuestos_by_anio_CAE)
+    elif(sortType == 3):
+        print("Ordenando con Selection Sort")
+        ssel.sort(sub_list, cmp_impuestos_by_anio_CAE)
+
+    #sa.sort(data_structs["data"], sort_criteria)

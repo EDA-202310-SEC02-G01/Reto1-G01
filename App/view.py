@@ -28,6 +28,7 @@ from DISClib.ADT import stack as st
 from DISClib.ADT import queue as qu
 assert cf
 #from tabulate import tabulate
+import traceback
 
 """
 La vista se encarga de la interacción con el usuario
@@ -199,15 +200,13 @@ if __name__ == "__main__":
                 id = input("Ingrese un id: ")
                 print_data(control, id)
             
-            elif int(inputs) == 11
+            elif int(inputs) == 11:
                 size = input("Indique tamaño de la muestra: ")
                 print("Seleccione el tipo de ordenamiento")
-                sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n4.QuickSort\n5.MergeSort\n")
+                sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n")
                 result = controller.sort(control, int(size), int(sortType))
                 delta_time = f"{result[1]:.3f}"
-                sorted_list = result[0]
-                print("Para", size, "elementos, delta tiempo:", str(delta_time))
-                printSortResults(sorted_list) 
+                print("Para", size, "elementos, delta tiempo:", str(delta_time)) 
 
             elif int(inputs) == 0:
                 working = False
@@ -217,4 +216,5 @@ if __name__ == "__main__":
                 print("Opción errónea, vuelva a elegir.\n")
         except ValueError:
             print("Ingrese una opción válida.\n")
+            traceback.print_exc()
     sys.exit(0)
