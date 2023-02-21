@@ -201,15 +201,15 @@ if __name__ == "__main__":
                 print_data(control, id)
             
             elif int(inputs) == 11:
-                size = input("Indique tamaño de la muestra:5,10,20,80, 0 si es small o \n1 si es large\n")
+                size = input("Indique tamaño de la muestra:5,10,20,50, 0 si es small o \n1 si es large\n")
                 if int(size)==5:
                     ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-5pct.csv'
                 elif int(size)==10:
                     ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-10pct.csv'
                 elif int(size)==20:
                     ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-20pct.csv'
-                elif int(size)==80:
-                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-80pct.csv'
+                elif int(size)==50:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-50pct.csv'
                 elif int(size)==0:
                     ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
                 elif int(size)==1:
