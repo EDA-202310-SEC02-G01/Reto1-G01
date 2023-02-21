@@ -66,9 +66,9 @@ def sort(control, size, sortType):
     Ordena los datos del modelo
     """
     start_time = get_time()
-    model.sort(control["model"], size, sortType)
+    model.sort(control, size, sortType)
     end_time = get_time()
-    delta_time = delta_time(start_time, end_time)
+    delta_time = float(end_time-start_time)
     return delta_time
 
 

@@ -204,9 +204,10 @@ if __name__ == "__main__":
                 size = input("Indique tamaño de la muestra: ")
                 print("Seleccione el tipo de ordenamiento")
                 sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n")
-                result = controller.sort(control, int(size), int(sortType))
-                delta_time = f"{result[1]:.3f}"
-                print("Para", size, "elementos, delta tiempo:", str(delta_time)) 
+                data = load_data(control)
+                result = controller.sort(data, int(size), int(sortType))
+                
+                print("Para "+ str(size)+ " elementos, delta tiempo:"+ str(result)) 
 
             elif int(inputs) == 0:
                 working = False
