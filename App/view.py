@@ -215,13 +215,18 @@ if __name__ == "__main__":
                 elif int(size)==1:
                     ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-large.csv'
                 
-
                 print("Seleccione el tipo de ordenamiento")
                 sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n")
+                org=input("Cómo desea organizar los datos: 1. Array\n2.Singled linked\n")
+                if int(org)==1:
+                    org="ARRAY_LIST"
+                elif int(org)==2:
+                    org="SINGLE_LINKED"
+                control = controller.new_controller(org)
                 data = load_data(control,ruta)
                 result = controller.sort(data, int(lt.size(data["data"])), int(sortType))
-                
-                print("Para "+ str(size)+ " elementos, delta tiempo:"+ str(result)) 
+                print("Su tamaño es:"+str(int(lt.size(data["data"]))))
+                print("El programa tardó: "+ str(round(result,2))+" ms") 
 
             elif int(inputs) == 0:
                 working = False
