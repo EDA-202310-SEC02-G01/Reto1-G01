@@ -61,11 +61,11 @@ def print_menu():
     print("11- Ordenar información")
     print("0- Salir")
 
-def load_data(control):
+def load_data(control,ruta):
     """
     Carga los datos
     """
-    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
+    #ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
     data = controller.load_data(control, ruta)
     return data
 
@@ -201,19 +201,25 @@ if __name__ == "__main__":
                 print_data(control, id)
             
             elif int(inputs) == 11:
-                org=input("Escoja cómo desea organizar los datos:1.Array_list \n2.singled linked list\n ")
-                size = input("Indique tamaño de la muestra: ")
+                size = input("Indique tamaño de la muestra:5,10,20,80, 0 si es small o \n1 si es large\n")
+                if int(size)==5:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-5pct.csv'
+                elif int(size)==10:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-10pct.csv'
+                elif int(size)==20:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-20pct.csv'
+                elif int(size)==80:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-80pct.csv'
+                elif int(size)==0:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
+                elif int(size)==1:
+                    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-large.csv'
+                
+
                 print("Seleccione el tipo de ordenamiento")
                 sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n")
-                
-                if int(org)==1:
-                    org="ARRAY_LIST"
-                elif int(org)==2:
-                    org="SINGLE_LINKED"
-
-                control=new_controller(org)
-                data = load_data(control)
-                result = controller.sort(data, int(size), int(sortType))
+                data = load_data(control,ruta)
+                result = controller.sort(data, int(lt.size(data["data"])), int(sortType))
                 
                 print("Para "+ str(size)+ " elementos, delta tiempo:"+ str(result)) 
 
