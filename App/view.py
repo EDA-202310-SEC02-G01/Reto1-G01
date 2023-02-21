@@ -38,11 +38,11 @@ operación solicitada
 """
 
 
-def new_controller():
+def new_controller(data_organization):
     """
         Se crea una instancia del controlador
     """
-    control = controller.new_controller()
+    control = controller.new_controller(data_organization)
     return control
 
 
@@ -142,7 +142,7 @@ def print_req_8(control):
     print(controller.req_8(control))
 
 # Se crea el controlador asociado a la vista
-control = new_controller()
+control = new_controller("ARRAY_LIST")
 
 # main del reto
 if __name__ == "__main__":
@@ -201,9 +201,17 @@ if __name__ == "__main__":
                 print_data(control, id)
             
             elif int(inputs) == 11:
+                org=input("Escoja cómo desea organizar los datos:1.Array_list \n2.singled linked list\n ")
                 size = input("Indique tamaño de la muestra: ")
                 print("Seleccione el tipo de ordenamiento")
                 sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n")
+                
+                if int(org)==1:
+                    org="ARRAY_LIST"
+                elif int(org)==2:
+                    org="SINGLE_LINKED"
+
+                control=new_controller(org)
                 data = load_data(control)
                 result = controller.sort(data, int(size), int(sortType))
                 

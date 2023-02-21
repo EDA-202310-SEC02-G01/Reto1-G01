@@ -31,14 +31,14 @@ El controlador se encarga de mediar entre la vista y el modelo.
 """
 
 
-def new_controller():
+def new_controller(data_organization):
     """
     Crea una instancia del modelo
     """
     control = {
         "model": None
     }
-    control["model"] = model.new_data_structs()
+    control["model"] = model.new_data_structs(data_organization)
     return control
 
 
