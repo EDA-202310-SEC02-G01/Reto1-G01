@@ -216,7 +216,7 @@ if __name__ == "__main__":
                     ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-large.csv'
                 
                 print("Seleccione el tipo de ordenamiento")
-                sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n")
+                sortType = input("1.Shell Sort\n2.Insertion Sort\n3.SelectionSort\n4.Merge sort \n5.Quick sort\n")
                 org=input("Cómo desea organizar los datos: 1. Array\n2.Singled linked\n")
                 if int(org)==1:
                     org="ARRAY_LIST"

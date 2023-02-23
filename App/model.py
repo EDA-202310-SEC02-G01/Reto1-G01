@@ -230,5 +230,10 @@ def sort(data_structs, size, sortType):
     elif(sortType == 3):
         print("Ordenando con Selection Sort")
         se.sort(sub_list, cmp_impuestos_by_anio_CAE)
+    elif (sortType==4):
+        print("ordenando con Merge sort")
+        merg.sort(sub_list,cmp_impuestos_by_anio_CAE )
+    elif (sortType==5):
+        quk.sort(sub_list,cmp_impuestos_by_anio_CAE)
 
     #sa.sort(data_structs["data"], sort_criteria)
