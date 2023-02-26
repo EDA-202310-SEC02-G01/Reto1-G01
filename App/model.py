@@ -234,6 +234,7 @@ def sort(data_structs, size, sortType):
         print("ordenando con Merge sort")
         merg.sort(sub_list,cmp_impuestos_by_anio_CAE )
     elif (sortType==5):
+        print("ordenando con Quick sort")
         quk.sort(sub_list,cmp_impuestos_by_anio_CAE)
 
     #sa.sort(data_structs["data"], sort_criteria)
