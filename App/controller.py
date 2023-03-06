@@ -81,6 +81,22 @@ def get_data(control, id):
     data = model.get_data(control["model"], id)
     return data
 
+def saldo_mayor_por_anio(data):
+    data = ["data"]
+    listaSaldoMayor = []
+    for lista in data:
+        anio = lista[0]
+        saldo_pagar = lista[9]
+        encontrado = False
+        for i, resultado in enumerate(listaSaldoMayor):
+            if resultado[0] == anio:
+                encontrado = True
+                if saldo_pagar > resultado[1]:
+                    listaSaldoMayor[i] = (anio, saldo_pagar)
+        if not encontrado:
+            listaSaldoMayor.append((anio, saldo_pagar))
+    listaSaldoMayor.sort()
+    return listaSaldoMayor
 
 def req_1(control):
     """

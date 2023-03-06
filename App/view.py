@@ -65,7 +65,7 @@ def load_data(control,ruta):
     """
     Carga los datos
     """
-    #ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
+    ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
     data = controller.load_data(control, ruta)
     return data
 
@@ -83,7 +83,8 @@ def print_req_1(control):
         Función que imprime la solución del Requerimiento 1 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 1
-    print(controller.req_1(control))
+    #print(controller.req_1(control))
+    print(controller.saldo_mayor_por_anio(control))
 
 
 def print_req_2(control):
@@ -157,7 +158,8 @@ if __name__ == "__main__":
         try:
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
-                data = load_data(control)
+                ruta=cf.data_dir + 'Dian\Salida_agregados_renta_juridicos_AG-small.csv'
+                data = load_data(control, ruta)
                 print("La cantidad de datos cargados son " + str(lt.size(data["data"]))+ ("\n"))
                 
                 print(data["data"]["elements"][0])
